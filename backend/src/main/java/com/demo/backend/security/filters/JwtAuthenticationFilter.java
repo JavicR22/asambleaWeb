@@ -1,9 +1,6 @@
 package com.demo.backend.security.filters;
 
-import com.demo.backend.model.PersonEntity;
 import com.demo.backend.model.UserEntity;
-import com.demo.backend.repositories.PersonRepository;
-import com.demo.backend.repositories.UserRepository;
 import com.demo.backend.security.jwt.JwtUtils;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -12,7 +9,6 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,7 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
