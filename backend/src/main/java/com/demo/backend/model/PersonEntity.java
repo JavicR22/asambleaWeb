@@ -9,12 +9,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "person")
+@Table(name = "persons")
 public class PersonEntity {
 
     public PersonEntity(String id_person) {
@@ -49,4 +51,10 @@ public class PersonEntity {
     @NotBlank
     @Size(max=50)
     private String email;
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @NotBlank
+    private List<ApartmentEntity> apartments;
+
+
 }
