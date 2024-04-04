@@ -23,42 +23,6 @@ public class BackendApplication {
 	}
 
 
-	@Autowired
-	PasswordEncoder passwordEncoder;
-
-	@Autowired
-	PersonRepository personRepository;
-	@Autowired
-	UserRepository userRepository;
-
-	@Bean
-	CommandLineRunner init(){
-
-		return  args -> {
-
-			PersonEntity personEntity = PersonEntity.builder()
-					.id_person("1193208890")
-					.firstName("Javic")
-					.secondName("Camilo")
-					.FirstLastname("Rojas")
-					.email("camilo@gmail.com")
-					.SecondLastname("Hurtado")
-					.address("lolasls")
-					.build();
-
-			UserEntity userEntity = UserEntity.builder()
-					.username(personEntity)
-					.roles(Set.of(RoleEntity.builder()
-							.name(ERole.valueOf(ERole.ADMIN.name()))
-							.build()))
-					.password(passwordEncoder.encode("1234"))
-					.build();
-
-			personRepository.save(personEntity);
-			userRepository.save(userEntity);
-
-		};
-	}
 }
 
 

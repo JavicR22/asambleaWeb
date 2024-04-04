@@ -37,8 +37,8 @@ const LoginPage = () => {
             console.log('Inicio de sesión exitoso');
            
            
-          const data = user;
-          const accessToken = data.token;
+
+          const accessToken = user.token;
 
           setToken(accessToken);
 

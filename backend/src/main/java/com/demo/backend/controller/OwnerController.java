@@ -13,13 +13,9 @@ public class OwnerController {
 
     @Autowired
     private PersonService personService;
-    @GetMapping("/casa")
-    public String casa(){
-        return "casa";
-    }
 
-    @GetMapping("/example")
-    public ResponseEntity<String> exampleMethod(@RequestHeader("username") String authorizationHeader) {
+    @GetMapping("/info/user")
+    public ResponseEntity<String> infoUser(@RequestHeader("username") String authorizationHeader) {
 
 
         String personInfo;

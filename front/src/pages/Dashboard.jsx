@@ -12,7 +12,7 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem('accessToken');
         // Realizar la solicitud GET
-        const response = await fetch('http://localhost:8080/example',{
+        const response = await fetch('http://localhost:8080/info/user',{
           method: "GET",
           headers: {
             "Authorization":`Bearer ${token}`,
