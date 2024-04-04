@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class PersonService {
     @Autowired
-    PersonRepository personRepository;
+    private PersonRepository personRepository;
 
     public String getInfoUser(long id){
 

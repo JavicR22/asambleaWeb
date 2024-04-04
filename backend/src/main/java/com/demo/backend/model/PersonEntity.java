@@ -25,20 +25,26 @@ public class PersonEntity {
     @NotBlank
     @Size(max=12)
     private String id_person;
+
     @NotBlank
     @Size(max=16)
     private String firstName;
+
     @Size(max=16)
     private String secondName;
+
     @NotBlank
     @Size(max=16)
     private String FirstLastname;
+
     @NotBlank
     @Size(max=16)
     private String SecondLastname;
+
     @NotBlank
     @Size(max=45)
     private String address;
+
     @Email
     @NotBlank
     @Size(max=50)
