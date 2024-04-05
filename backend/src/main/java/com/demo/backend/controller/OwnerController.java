@@ -9,22 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OwnerController {
-
-
     @Autowired
     private PersonService personService;
 
     @GetMapping("/info/user")
     public ResponseEntity<String> infoUser(@RequestHeader("username") String authorizationHeader) {
-
-
         String personInfo;
         personInfo = personService.getInfoUser(Long.parseLong(authorizationHeader));
-
-
-
         return ResponseEntity.ok(personInfo);
     }
-
-
-    }
+}

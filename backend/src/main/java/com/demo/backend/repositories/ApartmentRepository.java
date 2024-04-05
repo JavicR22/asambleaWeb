@@ -1,7 +1,7 @@
 package com.demo.backend.repositories;
 
 import com.demo.backend.model.ApartmentEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ApartmentRepository  extends CrudRepository<ApartmentEntity,Long> {
+public interface ApartmentRepository  extends JpaRepository<ApartmentEntity,Long> {
 }

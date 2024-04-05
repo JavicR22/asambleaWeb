@@ -24,15 +24,15 @@ public class UserEntity {
     @JoinColumn(name = "username")
     private PersonEntity username;
 
+    @NotBlank
+    private String password;
+
+    @ManyToMany(fetch = FetchType.EAGER, targetEntity = RoleEntity.class, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name="user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<RoleEntity> roles;
+
     public String getUsername(){
         return username != null ? username.getId_person() : null;
     }
-
-    @NotBlank
-    private String password;
-    @ManyToMany(fetch = FetchType.EAGER, targetEntity = RoleEntity.class, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name="user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-
-    private Set<RoleEntity> roles;
 
 }

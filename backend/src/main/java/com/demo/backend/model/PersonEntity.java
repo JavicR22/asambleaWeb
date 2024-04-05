@@ -57,4 +57,6 @@ public class PersonEntity {
     private List<ApartmentEntity> apartments;
 
 
+
+
 }

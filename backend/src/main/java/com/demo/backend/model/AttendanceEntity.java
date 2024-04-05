@@ -21,8 +21,8 @@ public class AttendanceEntity{
     private long attendance_id;
 
     @OneToOne
-    @JoinColumn(name = "username")
-    private UserEntity user;
+    @JoinColumn(name = "id_person")
+    private PersonEntity owner;
 
     @ManyToOne
     @JoinColumn(name = "assembly_id")

@@ -22,7 +22,6 @@ public class AssemblyEntity {
     private long assembly_id;
 
     @OneToMany(mappedBy = "assembly", cascade = CascadeType.ALL)
-    @NotBlank
     private List<AttendanceEntity> attendances;
 
     @DateTimeFormat

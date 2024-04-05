@@ -21,7 +21,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         PersonEntity person = new PersonEntity(username);
 

@@ -13,6 +13,9 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
+    public PersonEntity getPersonById(Long personId) {
+        return personRepository.findById(personId).orElse(null);
+    }
     public String getInfoUser(long id){
 
         Optional <PersonEntity> personOptional = personRepository.findById(id);

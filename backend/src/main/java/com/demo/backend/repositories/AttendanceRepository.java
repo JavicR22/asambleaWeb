@@ -1,7 +1,7 @@
 package com.demo.backend.repositories;
 
 import com.demo.backend.model.AttendanceEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AttendanceRepository  extends CrudRepository<AttendanceEntity,Long>{
+public interface AttendanceRepository  extends JpaRepository<AttendanceEntity,Long> {
 }
