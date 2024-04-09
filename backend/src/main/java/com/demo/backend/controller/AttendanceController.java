@@ -2,7 +2,6 @@ package com.demo.backend.controller;
 
 import com.demo.backend.model.*;
 import com.demo.backend.service.AssemblyService;
-import com.demo.backend.service.AttendanceService;
 import com.demo.backend.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AttendanceController {
-    @Autowired
-    private AttendanceService attendanceService;
 
     @Autowired
     private PersonService personService;
@@ -21,8 +18,9 @@ public class AttendanceController {
     @Autowired
     private AssemblyService assemblyService;
 
+    /*
     @PostMapping("/attendances")
-    public ResponseEntity<?> createAttendance(@RequestBody AttendanceRequest request) {
+    public ResponseEntity<?> createAttendance(@RequestBody AttendanceDTO request) {
         AttendanceEntity attendance = new AttendanceEntity();
         PersonEntity owner = personService.getPersonById(request.getOwnerId());
         AssemblyEntity assembly = assemblyService.getAssemblyById(request.getAssemblyId());
@@ -32,4 +30,6 @@ public class AttendanceController {
         attendanceService.createAttendance(attendance);
         return ResponseEntity.ok("Attendance created successfully");
     }
+
+     */
 }

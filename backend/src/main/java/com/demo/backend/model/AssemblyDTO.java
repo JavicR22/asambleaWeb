@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AssemblyRequest {
+public class AssemblyDTO {
+    private String issue;
+
     private String date;
     private String startTime;
     private String finishTime;

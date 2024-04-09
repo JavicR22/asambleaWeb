@@ -7,7 +7,7 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
     
-    const {login} = useAuth()
+    const {login, authority, role} = useAuth()
     const {username, password,onInputChange, onResetForm} = 
     useForm({
         username: "",
@@ -33,17 +33,25 @@ const LoginPage = () => {
             
             const user = await response.json();
             login(user.Username);
-            console.log(user.Username);
+            
             console.log('Inicio de sesión exitoso');
            
+            authority(user.Rol[0].authority);
            
 
           const accessToken = user.token;
 
           setToken(accessToken);
+          
 
           localStorage.setItem("accessToken", accessToken);
-          navigate("/dashboard");
+          console.log(role);
+  
+          if(role == "ROLE_ADMIN")
+            {navigate("/homeAdmin");
+          }else{
+            navigate("/homeOwner");
+          }
           
           
           } else {

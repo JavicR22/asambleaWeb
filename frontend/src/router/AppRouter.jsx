@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom"
-
+import DashboardUser from "../pages/DashboardUser"
 import NavBar from "../NavBar"
 import HomePage from "../pages/HomePage"
 import LoginPage from "../pages/LoginPage"
@@ -14,7 +14,8 @@ const AppRouter = () => {
             <Route index element={<HomePage/>}/>
             <Route path="/login" element ={<LoginPage/>}/>
             <Route element={<PrivateRouter/>}>
-            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/homeAdmin" element={<Dashboard/>}/>
+            <Route path="/homeOwner" element={<DashboardUser/>}/>
             </Route>
 
         </Route>

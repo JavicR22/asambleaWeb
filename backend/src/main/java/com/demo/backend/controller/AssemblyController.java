@@ -1,7 +1,7 @@
 package com.demo.backend.controller;
 
 import com.demo.backend.model.AssemblyEntity;
-import com.demo.backend.model.AssemblyRequest;
+import com.demo.backend.model.AssemblyDTO;
 import com.demo.backend.service.AssemblyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ public class AssemblyController{
     private AssemblyService assemblyService;
 
     @PostMapping("/assemblies")
-    public ResponseEntity<String> createAssembly(@RequestBody AssemblyRequest request) {
+    public ResponseEntity<String> createAssembly(@RequestBody AssemblyDTO request) {
 
         AssemblyEntity assembly = new AssemblyEntity();
         assembly.setDate(request.getDate());

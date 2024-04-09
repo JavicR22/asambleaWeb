@@ -16,6 +16,12 @@ export const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
 
+    const [role, setRole] = useState(null)
+
+    const authority = (userData) => {
+        setRole(userData)
+    }
+
     const login = (userData) => {
         setUser(userData);
         setIsAuthenticated(true);
@@ -43,7 +49,9 @@ export const AuthProvider = ({children}) => {
             logout,
             userInfo,
             personInfo,
-            setIsAuthenticated
+            setIsAuthenticated,
+            authority,
+            role
 
         }}>
             {children}
