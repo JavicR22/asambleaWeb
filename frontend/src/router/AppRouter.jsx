@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom"
-import DashboardUser from "../pages/DashboardUser"
+import DashboardOwner from "../pages/DashboardOwner"
 import NavBar from "../NavBar"
 import HomePage from "../pages/HomePage"
 import LoginPage from "../pages/LoginPage"
@@ -15,7 +15,7 @@ const AppRouter = () => {
             <Route path="/login" element ={<LoginPage/>}/>
             <Route element={<PrivateRouter/>}>
             <Route path="/homeAdmin" element={<Dashboard/>}/>
-            <Route path="/homeOwner" element={<DashboardUser/>}/>
+            <Route path="/homeOwner" element={<DashboardOwner/>}/>
             </Route>
 
         </Route>
