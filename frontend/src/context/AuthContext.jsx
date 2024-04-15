@@ -19,7 +19,7 @@ export const AuthProvider = ({children}) => {
     const [role, setRole] = useState(null)
 
     const authority = (userData) => {
-        setRole(userData)
+        setRole(userData);
     }
 
     const login = (userData) => {

@@ -33,8 +33,8 @@ public class AssemblyEntity {
 
 
     @NotBlank
-    @Enumerated(EnumType.STRING)
-    private EState state;
+
+    private String state;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotBlank
@@ -45,7 +45,6 @@ public class AssemblyEntity {
     private String start_time;
 
     @DateTimeFormat(pattern = "HH:mm:ss")
-    @NotBlank
     private String finish_time;
 
 
